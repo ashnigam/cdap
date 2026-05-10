@@ -97,7 +97,7 @@ public final class SchemaHash implements Serializable {
   private byte[] computeHash(Schema schema, boolean includeRecordName) {
     try {
       Set<String> knownRecords = new HashSet<>();
-      MessageDigest md5 = updateHash(MessageDigest.getInstance("MD5"), schema, knownRecords,
+      MessageDigest md5 = updateHash(MessageDigest.getInstance("SHA-256"), schema, knownRecords,
           includeRecordName);
       return md5.digest();
     } catch (NoSuchAlgorithmException e) {
