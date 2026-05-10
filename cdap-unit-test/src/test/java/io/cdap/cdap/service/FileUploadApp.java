@@ -97,7 +97,7 @@ public class FileUploadApp extends AbstractApplication {
         return null;
       }
 
-      final MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+      final MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 
       final Location location = partitionDir.append("upload-" + System.currentTimeMillis());
       final WritableByteChannel channel = Channels.newChannel(location.getOutputStream());
